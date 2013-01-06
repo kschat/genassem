@@ -68,10 +68,19 @@ abstract class DatabaseHandler {
 	*/
 	public function executeQuery($query, array $parameters = array(), $fetch_type = PDO::FETCH_ASSOC) {
 		$result = array();
-		
+
 		$sth = $this->handle->prepare($query);
+
+		foreach ($parameters as $key => $value) {
+			if(is_numeric($value)) {
+				$sth->bindValue($key, (int)trim($value), PDO::PARAM_INT);
+			}
+			else {
+				$sth->bindValue($key, trim($value), PDO::PARAM_STR);
+			}
+		}
 		
-		if($sth->execute($parameters)) {
+		if($sth->execute()) {
 			while($row = $sth->fetch($fetch_type)) {
 				array_push($result, $row);
 			}

@@ -38,11 +38,18 @@ class MemberDatabaseHandler extends DatabaseHandler {
 	* @param string used to identify a single member or all members by default.
 	* @return array an array containing all fields from the members table
 	*/
-	public function getMembers($id = '%', $fields = '*') {
-		$sql = 'SELECT ?
+	public function getMembers($id = '%', $offset = 0, $amount = 10) {
+		$sql = 'SELECT *
 				FROM members
-				WHERE members.member_id LIKE ?;';
+				WHERE members.member_id LIKE :id
+				ORDER BY members.member_id DESC LIMIT :offset, :amount;';
+
+		$params = array(
+				':id' 		=> $id,
+				':offset' 	=> $offset,
+				':amount'	=> $amount
+		);
 		
-		return $this->executeQuery($sql, array($fields, $id));
+		return $this->executeQuery($sql, $params);
 	}
 }
