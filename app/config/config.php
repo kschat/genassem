@@ -5,22 +5,6 @@
  */
 
 $config = array(
-	'databases'	=> array(
-		'ESA'	=> array(
-			'database'	=> 'esa',
-			'username'	=> 'ESA',
-			'password'	=> 'esapassword',
-			'host'		=> 'localhost'
-		)
-	),
-	'urls'	=> array(
-		'baseURL' => $_SERVER['SERVER_NAME']
-	),
-	'topNav' => array(
-		'Home' => 'home/', 
-		'Members' => 'members/',
-		'Groups' => 'groups/'
-	)
 );
 
 /**

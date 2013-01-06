@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <testsuites>
-	<testsuite name="ESA">
+	<testsuite name="genassem">
 		<directory suffix="Test.php">tests</directory>
 	</testsuite>
 </testsuites>
