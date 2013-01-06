@@ -4,8 +4,7 @@
  * Array that holds data for various parts of the web app - database, config options, etc.
  */
 
-$config = array(
-);
+$config = array();
 
 /**
  * Error reporting
