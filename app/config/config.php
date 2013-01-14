@@ -80,16 +80,10 @@ defined('LOGS_PATH')
 */
 
 defined('REQUESTED_PAGE')
-	or define('REQUESTED_PAGE', isset($_GET['page']) ? $_GET['page'] : 'home');
-	
-defined('REQUESTED_FILTER')
-	or define('REQUESTED_FILTER', isset($_GET['filter']) ? $_GET['filter'] : 'all members');
+	or define('REQUESTED_PAGE', isset($_GET['page']) ? $_GET['page'] : 'Home');
 
 defined('REQUESTED_REDIRECT')
 	or define('REQUESTED_REDIRECT', isset($_SESSION['redirect']) ? $_SESSION['redirect'] : false);
-
-defined('EDIT_REQUEST')
-	or define('EDIT_REQUEST', isset($_GET['edit']) ? $_GET['edit'] : false);
 
 defined('LOGIN_ERROR')
 	or define('LOGIN_ERROR', isset($_GET['loginError']) ? $_GET['loginError'] : false);

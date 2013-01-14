@@ -9,13 +9,16 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
-		<title><?php echo $this->title; ?></title>
+		<title><?php echo $model->title; ?></title>
 	</head>
 
 	<body>
+		<div class="container">
 		<?php 
-			$this->header->render(); 
-			$this->body->render();
+			foreach($model->components as $component) {
+				$component->renderView();
+			}
 		?>
+		</div>
 	</body>
 </html>

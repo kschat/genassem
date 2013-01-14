@@ -1,5 +1,4 @@
 <?php
-//include_once('../config.php');
 
 function printArray($arr) {
 	echo '<pre>';
@@ -7,15 +6,7 @@ function printArray($arr) {
 	echo '</pre>';
 }
 
-function formatIcon($icon) {
-	if(strlen($icon) > 1) {
-		return '<img src="http://'.$_SERVER['HTTP_HOST'].$icon.'" />';
-	}
-	
-	return $icon;
-}
-
-/*
+/**
 * Functions used to get around the glitch in explode
 */
 function explode_filtered_empty($var) { 
